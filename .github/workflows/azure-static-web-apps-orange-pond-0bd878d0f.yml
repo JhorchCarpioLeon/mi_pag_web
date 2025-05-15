@@ -15,8 +15,8 @@ jobs:
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
-          app_location: "/"  # Raíz del proyecto
-          skip_app_build: true
-          deployment_action: upload
+          app_location: "/"                 # Ajusta si tu web está en otro subdirectorio
+          skip_app_build: true              # O false, si necesitas compilar (ej: React)
         env:
-          azure_static_web_apps_api_token: ${{ secrets.GITHUB_TOKEN }}
+          AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+
